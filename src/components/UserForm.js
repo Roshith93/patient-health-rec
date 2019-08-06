@@ -3,73 +3,30 @@ import FormUserDetails from './FormUserDetails'
 import FormPersonalDetails from './FormPersonalDetails'
 import Success from './Success'
 import Confirm from './Confirm'
+import {PeriodicConsumer} from '../Context'
+
 
 class UserForm extends Component {
-    state = {
-    step: 1,
-    firstName: '',
-    lastName: '',
-    email: '',
-    occupation: '',
-    city: '',
-    bio: ''
-    }
-    // next Step
-    nextStep = () => {
-        const { step } = this.state;
-        this.setState(prevState => {
-            return{
-                step: prevState.step + 1
-            }
-        })
-    }
-     // prev Step
-    prevStep = () => {
-        const { step } = this.state;
-        this.setState(prevState => {
-            return{
-                step: prevState.step - 1
-            }
-        })
-    }
-  
-    // Handle fields change
-    handleChange = input => e => {
-        this.setState({ [input]: e.target.value });
-    };
+ 
   render() {
-       const { step } = this.state;
-    const { firstName, lastName, email, occupation, city, bio } = this.state;
-    const values = { firstName, lastName, email, occupation, city, bio };
-     switch (step) {
-      case 1:
-        return (
-          <FormUserDetails
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 2:
-        return (
-          <FormPersonalDetails
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 3:
-        return (
-          <Confirm
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            values={values}
-          />
-        );
-      case 4:
-        return <Success />;
-    }
+      return(
+
+        <PeriodicConsumer>
+         {value => {
+             const { step } = value;
+            switch (step) {
+            case 1:
+                return  <FormUserDetails />
+            case 2:
+                return  <FormPersonalDetails/>;
+            case 3:
+                return  <Confirm/>
+            case 4:
+                return <Success />;
+            }
+        }}
+       </PeriodicConsumer>
+      )
   }
 }
 
