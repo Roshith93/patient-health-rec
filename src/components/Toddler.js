@@ -23,13 +23,13 @@ import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-class BornBaby extends Component {
+class Toddler extends Component {
   render() {
  
 
     return (
       <React.Fragment>
-         <TitleBar title="Born Baby"/> 
+         <TitleBar title="Toddler"/> 
       <Container maxWidth="lg">
         <PeriodicConsumer>
             {value => {
@@ -46,7 +46,7 @@ class BornBaby extends Component {
             required
             id="firstName"
             name="firstName"
-            label="Babies first name"
+            label="Toddler first name"
             fullWidth
             autoComplete="fname"
           />
@@ -56,14 +56,14 @@ class BornBaby extends Component {
             required
             id="lastName"
             name="lastName"
-            label="Babies Last name"
+            label="Toddler Last name"
             fullWidth
             autoComplete="lname"
           />
         </Grid>
         <Grid item xs={4}>
           <FormControl fullWidth>
-                <InputLabel htmlFor="age-simple">Blood Group</InputLabel>
+                <InputLabel htmlFor="age-simple">Toddler Blood Group</InputLabel>
                 <Select
                   // value={values.age}
                   onChange={handleChange}
@@ -87,7 +87,7 @@ class BornBaby extends Component {
         
         <Grid item xs={4} >
         <FormControl fullWidth>
-                <InputLabel htmlFor="age-simple">Age</InputLabel>
+                <InputLabel htmlFor="age-simple">Toddler Age</InputLabel>
                 <Select
                   // value={values.age}
                   onChange={handleChange}
@@ -201,7 +201,7 @@ class BornBaby extends Component {
   }
 }
 
-export default BornBaby
+export default Toddler
 
 const styles = {
   button: {

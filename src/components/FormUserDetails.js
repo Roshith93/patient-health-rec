@@ -29,7 +29,7 @@ class FormUserDetails extends Component {
   render() {
     return (
       <React.Fragment>
-         <TitleBar />
+         <TitleBar title="Periodic Patient Monitoring System  " />
       <Grid container spacing={3} style={{marginTop:20}}>
         <Grid item xs={12}>
             <Typography variant="h5"  className={styles.title}>

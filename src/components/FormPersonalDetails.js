@@ -158,7 +158,7 @@ class FormPersonalDetails extends Component {
                 </Select>
           </FormControl>
         </Grid>
-         <Grid item xs={12}>
+         <Grid item xs={6}>
           <TextField
             id="address2"
             name="address2"
@@ -167,8 +167,9 @@ class FormPersonalDetails extends Component {
             autoComplete="billing address-line2"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <TextField
+            type="file"
             id="address2"
             name="address2"
             label="Remarks"

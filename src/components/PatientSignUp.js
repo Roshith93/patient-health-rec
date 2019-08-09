@@ -83,7 +83,7 @@ const tiers = [
     description: ['1.6 - 12 years'],
     buttonText: 'Select',
     buttonVariant: 'outlined',
-    route: 'bornbaby1'
+    route: 'toddler'
 
   },
   {
@@ -101,7 +101,7 @@ const tiers = [
     description: ['20 - Above'],
     buttonText: 'Select',
     buttonVariant: 'outlined',
-    route: 'bornbaby'
+    route: 'adult'
 
   }
 ];
